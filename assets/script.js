@@ -16,3 +16,21 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+/////**** ajout des event Listeners ****/////
+let cliquegauche = "vous avez cliqué à droite"
+let cliquedroit = "vous avez cliqué à gauche"
+
+let flechedegauche = document.getElementById("flechegauche");
+flechedegauche.addEventListener("click", function() {
+	let banniere = document.getElementById("banniere")
+	console.log(cliquegauche);
+}
+);
+
+let flechededroite = document.getElementById("flechedroite");
+flechedegauche.addEventListener("click", function() {
+	let banniere = document.getElementById("banniere")
+	console.log(cliquedroit);
+}
+);
