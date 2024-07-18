@@ -50,6 +50,7 @@ flechededroite.addEventListener("click", function() {
 		changementBanniere ();
 		changementBullet ();
 	}
+
 	console.log(cliquedroit);
 	
 });
@@ -67,7 +68,7 @@ function changementBanniere () {
 //***** Fonction pour changer le bullet-point *******/
 
 function changementBullet () {
-	let bulletPoint = document.querySelectorAll("dot")
+	let bulletPoint = document.querySelector("dots")
 	if (slideactuel === bulletactuel) {
 		bulletPoint.classlist.add("dot_selected")
 	}
