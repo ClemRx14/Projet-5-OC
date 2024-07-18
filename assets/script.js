@@ -68,11 +68,15 @@ function changementBanniere () {
 //***** Fonction pour changer le bullet-point *******/
 
 function changementBullet () {
-	let bulletPoint = document.querySelector("dots")
-	if (slideactuel === bulletactuel) {
+	let bulletPoint = document.querySelectorAll("dot")
+
+	for (let bulletactuel=0; bulletactuel<bullettotal; bulletactuel++) {
+
+	if (bulletactuel === slideactuel) {
 		bulletPoint.classlist.add("dot_selected")
 	}
 	else {
 		bulletPoint.classlist.remove("dot_selected")
 	}
+  }
 }
