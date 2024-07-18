@@ -21,16 +21,48 @@ const slides = [
 let cliquegauche = "vous avez cliqué à gauche"
 let cliquedroit = "vous avez cliqué à droite"
 
+// **** variables concernant les slides *****//
+
+let slideactuel = 0
+const slidetotal = 3
+
 let flechedegauche = document.getElementById("flechegauche");
 flechedegauche.addEventListener("click", function() {
-	let banniere = document.getElementById("banniere")
+	
+	if (slideactuel <= slidetotal) {
+		slideactuel--;
+		changementBanniereGauche ();
+	}
 	console.log(cliquegauche);
-}
-);
+
+});
 
 let flechededroite = document.getElementById("flechedroite");
 flechededroite.addEventListener("click", function() {
-	let banniere = document.getElementById("banniere")
+	
+	if (slideactuel < slidetotal) {
+		slideactuel++;
+		changementBanniereDroite ();
+	}
+ 
 	console.log(cliquedroit);
+	
+});
+
+	//***** Fonction pour changer l'image du background ***** //
+
+function changementBanniereDroite () {
+	let banniere = document.getElementById("banniere")
+	banniere.setAttribute('src', 'assets/images/slideshow/slide' + (slideactuel + 1) + '.jpg');
+	if (slideactuel === 3) {
+		banniere.setAttribute('src', 'assets/images/slideshow/slide' + (slideactuel + 1) + '.png');
+	}
 }
-);
+
+function changementBanniereGauche () {
+	let banniere = document.getElementById("banniere")
+	banniere.setAttribute('src', 'assets/images/slideshow/slide' + (slideactuel - 1) + '.jpg');
+
+}
+
+//***** Fonction pour changer le bullet-point *******/
