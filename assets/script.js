@@ -29,40 +29,34 @@ const slidetotal = 3
 let flechedegauche = document.getElementById("flechegauche");
 flechedegauche.addEventListener("click", function() {
 	
-	if (slideactuel <= slidetotal) {
+	if (slideactuel > 0) {
 		slideactuel--;
-		changementBanniereGauche ();
+		changementBanniere ();
 	}
 	console.log(cliquegauche);
 
 });
+
 
 let flechededroite = document.getElementById("flechedroite");
 flechededroite.addEventListener("click", function() {
 	
 	if (slideactuel < slidetotal) {
 		slideactuel++;
-		changementBanniereDroite ();
+		changementBanniere ();
 	}
- 
 	console.log(cliquedroit);
 	
 });
 
 	//***** Fonction pour changer l'image du background ***** //
 
-function changementBanniereDroite () {
+function changementBanniere () {
 	let banniere = document.getElementById("banniere")
 	banniere.setAttribute('src', 'assets/images/slideshow/slide' + (slideactuel + 1) + '.jpg');
 	if (slideactuel === 3) {
 		banniere.setAttribute('src', 'assets/images/slideshow/slide' + (slideactuel + 1) + '.png');
 	}
-}
-
-function changementBanniereGauche () {
-	let banniere = document.getElementById("banniere")
-	banniere.setAttribute('src', 'assets/images/slideshow/slide' + (slideactuel - 1) + '.jpg');
-
 }
 
 //***** Fonction pour changer le bullet-point *******/
