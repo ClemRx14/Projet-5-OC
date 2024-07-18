@@ -25,6 +25,8 @@ let cliquedroit = "vous avez cliqué à droite"
 
 let slideactuel = 0
 const slidetotal = 3
+let bulletactuel = 0
+const bullettotal = 3
 
 let flechedegauche = document.getElementById("flechegauche");
 flechedegauche.addEventListener("click", function() {
@@ -32,7 +34,9 @@ flechedegauche.addEventListener("click", function() {
 	if (slideactuel > 0) {
 		slideactuel--;
 		changementBanniere ();
+		changementBullet ();
 	}
+	
 	console.log(cliquegauche);
 
 });
@@ -44,6 +48,7 @@ flechededroite.addEventListener("click", function() {
 	if (slideactuel < slidetotal) {
 		slideactuel++;
 		changementBanniere ();
+		changementBullet ();
 	}
 	console.log(cliquedroit);
 	
@@ -60,3 +65,13 @@ function changementBanniere () {
 }
 
 //***** Fonction pour changer le bullet-point *******/
+
+function changementBullet () {
+	let bulletPoint = document.querySelectorAll("dot")
+	if (slideactuel === bulletactuel) {
+		bulletPoint.classlist.add("dot_selected")
+	}
+	else {
+		bulletPoint.classlist.remove("dot_selected")
+	}
+}
