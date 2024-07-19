@@ -27,6 +27,14 @@ let slideactuel = 0
 const slidetotal = 3
 let bulletactuel = 0
 const bullettotal = 3
+let texteactuel = 0
+const textetotal = 3
+const texteBackground = [
+	"Impressions tous formats <span>en boutique et en ligne</span>",
+	"Tirages haute définition grand format <span>pour vos bureaux et events</span>",
+	"Grand choix de couleurs <span>de CMJN aux pantones</span>",
+	"Autocollants <span>avec découpe laser sur mesure</span>"
+];
 
 let flechedegauche = document.getElementById("flechegauche");
 flechedegauche.addEventListener("click", function() {
@@ -38,6 +46,7 @@ flechedegauche.addEventListener("click", function() {
 	}
 		changementBanniere ();
 		changementBullet ();
+		changementTexte ();
 	
 	console.log(cliquegauche);
 
@@ -54,6 +63,7 @@ flechededroite.addEventListener("click", function() {
 	}
 		changementBanniere ();
 		changementBullet ();
+		changementTexte ();
 
 	console.log(cliquedroit);
 	
@@ -72,15 +82,25 @@ function changementBanniere () {
 //***** Fonction pour changer le bullet-point *******/
 
 function changementBullet () {
-	let bulletPoint = document.querySelectorAll(".dot")
+	let bulletPoint = document.querySelectorAll(".dot");
 
 	for (let bulletactuel = 0; bulletactuel < bullettotal; bulletactuel++) {
 
 	if (bulletactuel === slideactuel) {
-		bulletPoint.classlist.add("dot_selected")
+		bulletPoint.classlist.add("dot_selected");
 	}
 	else {
-		bulletPoint.classlist.remove("dot_selected")
+		bulletPoint.classlist.remove("dot_selected");
 	}
   }
+}
+
+//***** Fonction pour le changement de texte ******/
+
+function changementTexte () {
+	let description = document.getElementById("description");
+
+	for ( let texteactuel = 0; texteactuel < textetotal; texteBackground++) {
+	description.innerHTML = texteBackground;
+	}
 }
