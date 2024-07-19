@@ -33,9 +33,11 @@ flechedegauche.addEventListener("click", function() {
 	
 	if (slideactuel > 0) {
 		slideactuel--;
+	} else {
+		slideactuel = slidetotal;
+	}
 		changementBanniere ();
 		changementBullet ();
-	}
 	
 	console.log(cliquegauche);
 
@@ -47,9 +49,11 @@ flechededroite.addEventListener("click", function() {
 	
 	if (slideactuel < slidetotal) {
 		slideactuel++;
+	} else {
+		slideactuel = 0;
+	}
 		changementBanniere ();
 		changementBullet ();
-	}
 
 	console.log(cliquedroit);
 	
@@ -68,9 +72,9 @@ function changementBanniere () {
 //***** Fonction pour changer le bullet-point *******/
 
 function changementBullet () {
-	let bulletPoint = document.querySelectorAll("dot")
+	let bulletPoint = document.querySelectorAll(".dot")
 
-	for (let bulletactuel=0; bulletactuel<bullettotal; bulletactuel++) {
+	for (let bulletactuel = 0; bulletactuel < bullettotal; bulletactuel++) {
 
 	if (bulletactuel === slideactuel) {
 		bulletPoint.classlist.add("dot_selected")
